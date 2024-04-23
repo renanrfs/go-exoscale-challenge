@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "2eddc9a3-3149-4321-b3ee-f4cf3790588c",
+		"name": "job-posting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18563576"
+	},
+	"item": [
+		{
+			"name": "get jobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"company\": \"ACME\",\n    \"title\": \"QA\",\n    \"description\": \"QA role for ACME company\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/jobs/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"jobs",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "c5e61b3d-c05c-4b59-9af0-501a64b0149c"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

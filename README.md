@@ -1,32 +1,20 @@
 # Usage Billing System
 
-This is a simple Go program that processes usage records for resources and generates billing statements based on the usage duration.
+This is a simple Go repository witch three challenges:
 
-## Overview
-
-The program defines two structs:
-
-1. `UsageRecord`: Represents a record of usage of a resource, containing fields like the event type (create/destroy), resource ID, account ID, and timestamp.
-
-2. `BillingStatement`: Represents a billing statement for a resource, containing fields like the resource ID, account ID, and usage duration in minutes.
-
-The main function `processUsage` takes an array of `UsageRecord` structs as input and returns an array of `BillingStatement` structs. It does this by:
-
-1. Storing the "create" events in a map, using a key composed of the account ID and resource ID.
-2. For each "destroy" event, it looks up the corresponding "create" event in the map.
-3. If a matching "create" event is found, it calculates the duration between the "create" and "destroy" timestamps.
-4. It then generates a `BillingStatement` struct with the resource ID, account ID, and calculated duration.
-
-The `main` function demonstrates the usage of `processUsage` by providing a sample set of `UsageRecord` structs and printing the resulting `BillingStatement` structs.
+1. `billing-statement.go`: simple billing system which feeds off a list of usage records.
+2. `job-position.go`: mock JSON HTTP API for a minimalist job board application.
+   1. `job-posting.postman_collection.json`: Postman collection for the API.
+3. `asn1-parsing.go`: ASN.1 parser that is sufficient to handle private keys in the EC and RSA format
 
 ## Usage
 
 1. Clone the repository or download the source code.
 2. Navigate to the project directory.
-3. Build the program using `go build`.
-4. Run the executable.
-
-The program will output the billing statements based on the sample usage records provided in the `main` function.
+3. Run the program using:
+   1. `go run billing-statement.go`.
+   2. `go run job-posting.go`.
+   3. `go run asn1-parsing.go`.
 
 ## Contributing
 
